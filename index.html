@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,12 +13,18 @@
       href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
     <title>My Weather App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="weather-app-container">
-      <header>
+      <div class="weather-app-header">
+        <h1 class="city">
+          London
+
+          <div class="day-time">Friday, 20 June 19:00</div>
+        </h1>
         <form class="search-form">
           <input
             type="text"
@@ -30,21 +36,30 @@
           <button class="search-button">
             <span class="material-symbols-outlined"> search </span>
           </button>
- 
-        </form>
-          <div class="weather-app-sidebuttons">
-            <button class="unit-button">C/F</button>
-            <button class="theme-button">Change Theme</button>
-         </div>
-      </header>
-      <main>
-        <h1>City</h1>
 
-        <p>Friday 19:00</p>
-        <div>
+          <div class="weather-app-sidebuttons">
+            <button class="unit-button">
+              <a href="#" target="_blank">°C </a>/ <a href="#" target="_blank">°F</a>
+            </button>
+            <button class="theme-button">
+              <span class="material-symbols-outlined"> mode_night </span
+              ><span class="material-symbols-outlined"> clear_day </span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <main>
+        <div class="temperature">
+          <span>☀️</span>
+          <span>20</span>
+          <span>°C</span>
+        </div>
+        <br />
+        <div class="weather-info">
           <p>Clear Sky</p>
-          <p>Humidity: <strong>67%</strong> Wind: <strong>3.2 km/hr</strong></p>
-          <p>🌞 20°C</p>
+          <p>Humidity: <strong>67%</strong></p>
+
+          <p>Wind: <strong>3.2 km/hr</strong></p>
         </div>
       </main>
       <footer>
@@ -54,7 +69,8 @@
             href="https://www.shecodes.io/graduates/179824-baljeet-kaur"
             target="_blank"
             >Baljeet Kaur</a
-          >, is open-sourced on
+          >
+          is open-sourced on
           <a href="https://github.com/Bkaur90/My-Weather-App" target="_blank"
             >GitHub</a
           >
