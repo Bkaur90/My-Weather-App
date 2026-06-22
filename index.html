@@ -39,14 +39,7 @@
           <button class="search-button">
             <span class="material-symbols-outlined"> search </span>
           </button>
-
-          <div class="weather-app-sidebuttons">
-            <button class="unit-button">
-              <a href="#" target="_blank" id="celsius-link">°C </a>
-            </button>
-            <button class="unit-button">
-              <a href="#" target="_blank" id="fahrenheit-link">°F</a>
-            </button>
+          <div class="weather-app-sidebutton">
             <button class="theme-button">
               <span class="material-symbols-outlined"> mode_night </span
               ><span class="material-symbols-outlined"> clear_day </span>
@@ -54,19 +47,24 @@
           </div>
         </form>
       </div>
+
       <main>
-        <div >
-          <span id="icon">☀️  </span>
-       
+        <div class="Weather-data">
+          <span id="icon">☀️ </span>
+
           <span id="temperature"></span>
-          <span id="tempUnit">°</span>
+          <span id="tempUnit">
+            <a href="#" id="celsius-link">°C |</a>
+
+            <a href="#" id="fahrenheit-link">°F</a>
+          </span>
         </div>
         <br />
         <div class="weather-info">
           <p id="description"></p>
           <p>Humidity: <strong id="humidity"></strong></p>
 
-          <p >Wind: <strong id="wind"></strong></p>
+          <p>Wind: <strong id="wind"></strong></p>
         </div>
       </main>
       <footer>

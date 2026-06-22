@@ -7,12 +7,12 @@ body {
 }
 .weather-app-container {
   text-align: center;
-  background-color: #f7f7ff;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   color: rgb(0, 0, 0, 0.8);
   box-shadow: 0px 4px 20px rgb(0, 0, 0, 0.2);
-  font-size: 18px;
+  font-size: 22px;
   font-family: "Roboto", sans-serif;
-  max-width: 80%;
+  max-width: 70%;
   margin: 0 auto;
   padding: 40px 40px 10px 40px;
   border-radius: 30px;
@@ -20,9 +20,10 @@ body {
 .weather-app-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 .city {
+  margin: 20px;
   text-align: left;
   font-size: 50px;
   color: #3582d5;
@@ -30,60 +31,35 @@ body {
 
 .day-time {
   margin: 10px;
-}
-.day-time {
   text-align: left;
   font-size: 20px;
   color: rgb(0, 0, 0, 0.8);
 }
 .search-form {
   display: flex;
-  justify-content: right;
 }
 .search-input {
-  display: flex;
-  justify-content: left;
-  font-size: 16px;
-  padding: 12px;
-  border: 1px solid rgb(0, 0, 0, 0.2);
+  font-size: 24px;
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 10px;
-  width: 40%;
-  background-color: #ebe8f6;
+  width: 60%;
+
+  background-color: #ebf4f9;
 }
 .search-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
   color: #170842;
-  margin-right: 10px;
 }
 
 .material-symbols-outlined {
   font-size: 30px;
 }
-.weather-app-sidebuttons {
+.weather-app-sidebutton {
   display: flex;
-  justify-content: space-evenly;
-  gap: 10px;
-}
-
-.unit-button {
-  font-size: 28px;
-  font-weight: 500;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border: 1px solid rgb(0, 0, 0, 0.2);
-  border-radius: 40px;
-  background-color: #649fdd;
-  cursor: pointer;
-}
-.unit-button a {
-  color: #170842;
-  text-decoration: none;
-}
-.unit-button:hover {
-  transition: all 300ms ease-in-out;
+  margin: 5px;
 }
 
 .theme-button {
@@ -113,17 +89,28 @@ body {
 .dark-theme .city {
   color: #001128;
 }
-.dark-theme .unit-button a {
-  background-color: black;
-  color: white;
-}
-.dark-theme .unit-button {
-  background-color: black;
-  color: white;
-}
+
 .dark-theme .theme-button {
   background-color: black;
   color: white;
+}
+.dark-theme .weather-app-container {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898;
+}
+.dark-theme .search-input {
+  background: #e4dddd;
+  color: black;
 }
 main {
   display: flex;
@@ -131,30 +118,47 @@ main {
   margin: 30px;
   font-weight: 600;
 }
-
+.Weather-data {
+  display: flex;
+  justify-content: center;
+}
 .weather-info {
   display: flex;
   justify-content: space-evenly;
 }
 
 .iconImage {
- 
   height: 100px;
   width: 100px;
+  margin-top: 10px;
+  line-height: 1;
 }
 #icon {
   font-size: 60px;
 }
 #temperature {
-  margin-top: 10px;
   font-size: 90px;
 }
 
 #tempUnit {
-  font-size: 50px;
+  margin-top: 10px;
+  font-size: 40px;
+}
+#celsius-link {
+  text-decoration: none;
+  color: #0b325c;
+}
+#fahrenheit-link {
+  text-decoration: none;
+  color: #0b325c;
+}
+.UnitChange {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 55px;
 }
 strong {
-  color: #290d76;
+  color: #0b325c;
 }
 
 a {
