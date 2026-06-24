@@ -108,3 +108,27 @@ function ThemeToggle(event) {
 }
 let themeButton = document.querySelector(".theme-button");
 themeButton.addEventListener("click", ThemeToggle);
+
+function DisplayWeeklyForecast() {
+  let weeklyForecastdays = ["Sun", "Mon", "Tues", "Wed"];
+  let ForecastHtml = "";
+  weeklyForecastdays.forEach(function (day) {
+    ForecastHtml =
+      ForecastHtml +
+      `
+        <div class="week-days">
+          <div class="weekly-day">${day}</div>
+          <div class="weekly-icons">⛅️</div>
+          <div class="weekly-temperatures">
+            <div class="weekly-HighLow-temperatures">
+              <strong>25°</strong>
+            </div>
+            <div class="weekly-HighLow-temperatures">15°</div>
+          </div>
+        </div>`;
+  });
+
+  let ForecastElement = document.querySelector("#Weekly-Forecast");
+  ForecastElement.innerHTML = ForecastHtml;
+}
+DisplayWeeklyForecast();
