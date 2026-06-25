@@ -13,15 +13,17 @@ body {
   font-size: 22px;
   font-family: "Roboto", sans-serif;
   max-width: 800px;
-  max-height: 100%;
-  margin: 40px auto;
+margin: 40px auto;
   padding: 20px;
   border-radius: 20px;
+
+  
 }
 .weather-app-header {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
+ 
 }
 .city {
   margin: 20px;
@@ -44,8 +46,9 @@ body {
   padding: 10px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 10px;
-  width: 60%;
-
+  width: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
   background-color: #ebf4f9;
 }
 .search-button {
@@ -136,6 +139,8 @@ main {
   display: flex;
   justify-content: space-evenly;
   color: #3582d5;
+  flex-wrap: wrap; /* Allows text items to wrap instead of overflowing */
+  gap: 10px;
 }
 
 .iconImage {
@@ -170,6 +175,8 @@ main {
 .Weekly-Forecast {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap; /* Allows text items to wrap instead of overflowing */
+  gap: 10px;
 }
 .week-days {
   margin: 10px;

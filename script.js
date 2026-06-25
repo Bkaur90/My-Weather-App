@@ -115,24 +115,32 @@ function GetWeeklyForecast(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(DisplayWeeklyForecast);
 }
-
+function formatday(timestamp) {
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  let date = new Date(timestamp * 1000);
+  return days[date.getDay()];
+}
+formatday(1782406800);
 function DisplayWeeklyForecast(response) {
-  let weeklyForecastdays = ["Sun", "Mon", "Tues", "Wed"];
+  console.log(response.data);
+
   let ForecastHtml = "";
-  weeklyForecastdays.forEach(function (day) {
-    ForecastHtml =
-      ForecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      ForecastHtml =
+        ForecastHtml +
+        `
         <div class="week-days">
-          <div class="weekly-day">${day}</div>
-          <div class="weekly-icons">⛅️</div>
+          <div class="weekly-day">${formatday(day.time)}</div>
+          <div class="weekly-icons"><img src="${day.condition.icon_url}" /></div>
           <div class="weekly-temperatures">
             <div class="weekly-HighLow-temperatures">
-              <strong>25°</strong>
+              <strong>  ${Math.round(day.temperature.maximum)}°</strong>
             </div>
-            <div class="weekly-HighLow-temperatures">15°</div>
+            <div class="weekly-HighLow-temperatures">${Math.round(day.temperature.minimum)}°</div>
           </div>
         </div>`;
+    }
   });
 
   let ForecastElement = document.querySelector("#Weekly-Forecast");
