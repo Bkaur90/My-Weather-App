@@ -21,6 +21,15 @@ function ChangeTemperature(response) {
   iconElement.innerHTML = response.data.condition.icon;
   dayTimeElement.innerHTML = DateAndTime(date);
   IconImage.innerHTML = ` <img src="${response.data.condition.icon_url}" class="iconImage" />`;
+  let body = document.querySelector("body");
+  let dates = date.getDate();
+
+  let hours = date.getHours();
+  if (hours >= 20 || hours < 6) {
+    body.classList.add("dark-theme");
+  } else {
+    body.classList.remove("dark-theme");
+  }
 
   function ShowFahrenheitTemperature(event) {
     event.preventDefault();
